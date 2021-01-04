@@ -3,25 +3,34 @@ import ReactAudioPlayer from "react-audio-player";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import 'react-jinke-music-player/assets/index.css'
 import axios from "axios";
+axios.defaults.withCredentials=true
 
 export default class AudioPage extends Component {
 
-    // componentDidMount() {
-    //     axios
-    //         .get(`http://localhost:8000/audio`, {
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 "Access-Control-Allow-Origin": "*"
-    //
-    //             }
-    //         })
-    //         .then((res) => {
-    //             console.log(res)
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }
+    componentDidMount() {
+        const accessToken=localStorage.getItem("accessToken")
+        if (!accessToken){
+            alert("Login Require")
+            this.props.history.push("/login");
+        }
+        axios
+            .get(`http://localhost:8000/users/test_token`,{
+                headers:{
+                    'Authorization': `JWT ${accessToken}`,
+                    'Content-Type':"application/json",
+                    withCredentials: true
+                }
+            })
+            .then((res)=>{
+                if (res.data.newAccessToken){
+                    localStorage.setItem("accessToken",res.data.newAccessToken)
+                }
+            })
+            .catch((err)=>{
+                this.props.history.push("/logout")
+                console.log(err)
+            })
+    }
 
     render() {
         return (
