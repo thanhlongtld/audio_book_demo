@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+body {
+    font-size: var(--text-small);
+    font-weight: var(--font-medium);
+    background-color: var(--color-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.logo{
+    font-family: 'Freckle Face', cursive;
+    font-size: var(--text-biggest);
+    text-transform: uppercase;
+    color: var(--color-shadow_light);
+    letter-spacing: 5px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    z-index: 7;
+    max-width: 1024px;
+    margin: auto;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+.nav-links a{
+    color: var(--color-shadow_light);
+    font-size: var(--text-medium);
+    cursor: pointer;
+}
+.nav-links a button{
+    cursor: pointer;
+}
+.bubble{
+    position: absolute;
+    transform: translate(50%,-50%);
+    z-index: var(--z-behind);
+}
+@media screen and (max-width: 1024px) {
+    .bubble{
+        transform: translate(30%,-50%);
+    }
+}

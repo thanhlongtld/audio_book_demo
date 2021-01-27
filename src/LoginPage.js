@@ -4,7 +4,7 @@ import AuthenticationContainer from "./AuthenticationContainer";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser, faLock} from "@fortawesome/free-solid-svg-icons";
 import {faFacebookF, faTwitter, faGoogle, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-
+import authStyle from "./css/user/login_register.module.css"
 axios.defaults.withCredentials = true
 
 export default class LoginPage extends Component {
@@ -43,41 +43,41 @@ export default class LoginPage extends Component {
     render() {
         return (
             <AuthenticationContainer isSignUp={this.props.isSignUp} history={this.props.history}>
-                <form action="" className="sign-in-form" onSubmit={this.formOnSubmit}>
-                    <h2 className="title">Sign in</h2>
-                    <div className="input-field">
+                <form action="" className={authStyle['sign-in-form']} onSubmit={this.formOnSubmit}>
+                    <h2 className={authStyle.title}>Sign in</h2>
+                    <div className={authStyle['input-field']}>
                         <i>
                             <FontAwesomeIcon icon={faUser}/>
                         </i>
                         <input type="text" placeholder="Username" name="username" onChange={this.inputOnChange}
                                value={this.state.username}/>
                     </div>
-                    <div className="input-field">
+                    <div className={authStyle['input-field']}>
                         <i>
                             <FontAwesomeIcon icon={faLock}/>
                         </i>
                         <input type="password" placeholder="Password" name="password" onChange={this.inputOnChange}
                                value={this.state.password}/>
                     </div>
-                    <input type="submit" value="Login" className="btn solid"/>
-                    <p className="social-text">Or Sign in with social platforms</p>
-                    <div className="social-media">
-                        <a href="#" className="social-icon">
+                    <input type="submit" value="Login" className={`${authStyle.btn} ${authStyle.solid}`} />
+                    <p className={authStyle['social-text']}>Or Sign in with social platforms</p>
+                    <div className={authStyle['social-media']}>
+                        <a href="#" className={authStyle['social-icon']}>
                             <i>
                                 <FontAwesomeIcon icon={faFacebookF}/>
                             </i>
                         </a>
-                        <a href="#" className="social-icon">
+                        <a href="#" className={authStyle['social-icon']}>
                             <i>
                                 <FontAwesomeIcon icon={faTwitter}/>
                             </i>
                         </a>
-                        <a href="#" className="social-icon">
+                        <a href="#" className={authStyle['social-icon']}>
                             <i>
                                 <FontAwesomeIcon icon={faGoogle}/>
                             </i>
                         </a>
-                        <a href="#" className="social-icon">
+                        <a href="#" className={authStyle['social-icon']}>
                             <i>
                                 <FontAwesomeIcon icon={faLinkedin}/>
                             </i>

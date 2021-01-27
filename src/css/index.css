@@ -11,14 +11,66 @@ body, input {
 }
 
 :root {
-    --text-tiny: 9px;
-    --text-small: 18px;
-    --text-medium: 36px;
-    --text-large: 54;
+    --header-height: 3rem;
+
+    --text-tiny: 8px;
+    --text-small: 16px;
+    --text-medium: 32px;
+    --text-big: 48px;
+    --text-biggest: 64px;
+
     --color-dark: #12232E;
     --color-lighter: #007CC7;
     --color-lightest: #4DA8DA;
     --color-shadow_dark: #203647;
     --color-shadow_light: #EEFBFB;
-    --color-grey-light: #acacac
+    --color-grey-light: #acacac;
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-behind: -1;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0;
+}
+
+h2,
+h3 {
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }

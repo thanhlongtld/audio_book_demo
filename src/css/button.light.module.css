@@ -1,0 +1,4 @@
+.btn-light{
+    background: linear-gradient(180deg, #4DA8DA 0%, rgba(238, 251, 251, 0) 100%);
+    color: var(--color-shadow_light);
+}

@@ -4,9 +4,10 @@ import AudioPage from "./AudioPage";
 import LoginPage from "./LoginPage";
 import Logout from "./Logout";
 import Register from "./Register";
+import LandingPage from "./LandingPage";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-
+import "./css/animation.css"
 
 export default class App extends Component {
     render() {
@@ -17,14 +18,15 @@ export default class App extends Component {
                         <TransitionGroup>
                             <CSSTransition
                                 key={location.key}
-                                timeout={300}
-                                classNames="fade"
+                                timeout={5000000}
+                                classNames='fade'
                             >
                                 <Switch>
                                     <Route exact path="/login"
                                            render={(props) => <LoginPage {...props} isSignUp={false}/>}/>
                                     <Route exact path="/register"
                                            render={(props) => <Register {...props} isSignUp={true}/>}/>
+                                    <Route exact path="/" render={(props) => <LandingPage {...props} />}/>
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>

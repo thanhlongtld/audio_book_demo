@@ -1,0 +1,7 @@
+.btn{
+    height: 70px;
+    width: 210px;
+    font-size: var(--text-medium);
+    border-radius: 46px;
+    border: none;
+}
