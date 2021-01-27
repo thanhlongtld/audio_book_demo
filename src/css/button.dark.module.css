@@ -1,0 +1,7 @@
+.btn-dark{
+    background: linear-gradient(180deg, #007CC7 0%, rgba(77, 168, 218, 0) 100%);
+    color: var(--color-shadow_light);
+}
+.btn-dark:hover{
+    opacity: 0.8;
+}

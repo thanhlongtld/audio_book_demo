@@ -9,16 +9,19 @@ body {
 }
 .logo{
     font-family: 'Freckle Face', cursive;
-    font-size: var(--text-biggest);
+    font-size: var(--text-medium);
     text-transform: uppercase;
     color: var(--color-shadow_light);
     letter-spacing: 5px;
+}
+.logo a {
+    color: var(--color-shadow_light);
 }
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 8vh;
+    height: 8vh;
     z-index: 7;
     max-width: 1024px;
     margin: auto;
@@ -31,19 +34,133 @@ nav{
 }
 .nav-links a{
     color: var(--color-shadow_light);
-    font-size: var(--text-medium);
+    font-size: var(--text-small);
     cursor: pointer;
 }
 .nav-links a button{
+    font-size: var(--text-small);
     cursor: pointer;
 }
 .bubble{
     position: absolute;
-    transform: translate(50%,-50%);
+    transform: translateY(-100%);
+    left: 48%;
     z-index: var(--z-behind);
 }
-@media screen and (max-width: 1024px) {
+.presentation{
+
+}
+.slogan{
+
+}
+.nav-toggle{
+    display: block;
+    color: var(--color-shadow_light);
+    cursor: pointer;
+}
+.l-header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    border-bottom: 2px solid var(--color-shadow_light);
+}
+.active-link {
+    position: relative;
+}
+
+.active-link::after {
+    content: "";
+    position: absolute;
+    bottom: -0.7rem;
+    left: 0;
+    width: 65%;
+    height: 3px;
+    background-color: var(--color-shadow_light);
+}
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+    margin-top: var(--mb-3);
+    max-width: 1024px;
+}
+.home-data{
+    height: 50% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-slogan, .home-intro{
+    text-align: center;
+    color: var(--color-shadow_light);
+}
+.home-slogan{
+    font-size: var(--text-big);
+}
+.home-intro{
+    font-size: var(--text-small);
+}
+.home-button{
+    margin: var(--mb-2) auto auto auto;
+}
+@media screen and (max-width: 768px) {
+    nav{
+        margin: auto var(--mb-2) auto var(--mb-2);
+    }
+    .nav-links{
+        position: fixed;
+        top: -100%;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--color-dark);
+        left: 0;
+        transition: 0.4s;
+    }
+    .nav-links li{
+        margin-bottom: var(--mb-3);
+    }
     .bubble{
-        transform: translate(30%,-50%);
+        display: none;
+    }
+    .home-slogan{
+        font-size: var(--text-medium);
+    }
+    .home-intro{
+        font-size: var(--text-small);
+    }
+}
+.show-menu{
+    top: 8vh;
+}
+@media screen and (min-width: 769px) {
+    .nav-toggle{
+        display: none;
+    }
+    .home-container{
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: var(--z-normal);
+        margin: auto;
+    }
+    .home-data{
+        flex: 1;
+    }
+    .home-img{
+        flex: 2;
+    }
+    .home-slogan{
+        width: 100%;
+        text-align: left;
+    }
+    .home-intro{
+        text-align: left;
+    }
+    .home-button{
+        margin: var(--mb-2) auto auto 0;
     }
 }

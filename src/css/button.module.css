@@ -1,7 +1,7 @@
 .btn{
-    height: 70px;
-    width: 210px;
-    font-size: var(--text-medium);
+    height: 40px;
+    width: 120px;
+    font-size: var(--text-small);
     border-radius: 46px;
     border: none;
 }
